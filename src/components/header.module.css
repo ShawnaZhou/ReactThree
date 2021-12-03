@@ -1,0 +1,207 @@
+@media (max-width:560px) {
+    .mainContent {
+        background-color: transparent;
+        overflow: visible !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        height: 3.5rem !important;
+        padding-left: 1rem !important;
+    }
+
+    .mainContent h1 {
+        display: block;
+        cursor: pointer;
+        text-orientation: unset !important;
+        word-wrap: unset !important;
+        writing-mode: horizontal-tb !important;
+        margin: 0;
+    }
+
+    .btnHelper {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+    }
+
+    .menuBtn {
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        position: fixed;
+        right: 1rem;
+        top: 1rem;
+        z-index: 110;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menuBtn span {
+        width: 100%;
+        background-color: #000;
+        height: 3px;
+        margin: 2px;
+        transition: transform 0.3s;
+    }
+
+    .cMenuBtnTop {
+        display: none;
+    }
+
+    .cMenuBtnMid {
+        position: relative;
+        top: 0.37rem;
+        transform: rotate(45deg);
+        background-color: #fff !important;
+    }
+
+    .cMenuBtnBottom {
+        transform: rotate(-45deg);
+        background-color: #fff !important;
+    }
+
+    .mainList {
+        position: fixed;
+        top: 0;
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+        width: 60vw;
+        z-index: 10;
+        height: 100vh;
+        background-color: black;
+        align-content: flex-end;
+        animation-name: menuShow;
+        animation-duration: .3s;
+        animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-direction: alternate;
+    }
+
+    @keyframes menuShow {
+        from {
+            right: -50vw;
+        }
+
+        to {
+            right: 0;
+        }
+    }
+
+    .listItems {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.mainContent {
+    margin: 0 !important;
+    max-height: 5rem;
+    overflow: hidden;
+    width: 96vw;
+    text-align: center;
+    padding: 0 2rem;
+    height: 100%;
+    color: rgb(118, 121, 122);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainContent h1 {
+    display: block;
+    z-index: 5;
+    cursor: pointer;
+    text-orientation: sideways;
+    word-wrap: break-word;
+    writing-mode: horizontal-tb;
+    text-shadow: 1px 1px 5px #000;
+    letter-spacing: 0.1rem;
+}
+
+.listItems {
+    background-color: transparent !important;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: all 0.5s;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
+}
+
+.listItems::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.listItems:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.listItems::before {
+    content: ' ';
+    display: block;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+    inset: 0 0 0 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-bottom: 2px solid #fff;
+}
+
+.listItems:hover {
+    color: #fff;
+}
+
+.disappear {
+    display: none;
+}
+
+
+
+
+
+@media (min-width:560px) {
+    .mainContent {
+        /* background-color: rgba(0, 0, 0, 1); */
+        position: fixed;
+        top: 0;
+        left: 0;
+
+    }
+
+    .menuBtn {
+        display: none;
+    }
+
+    .mainList {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mainList span {
+        width: 5rem;
+        height: auto;
+        margin-right: 1rem;
+        border-radius: 5px;
+    }
+}

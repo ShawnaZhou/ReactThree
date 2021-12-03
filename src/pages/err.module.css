@@ -1,0 +1,87 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.content{
+    width: 100vh;
+    padding: 10vh 0 20vh 0;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+.helper{
+    position: relative;
+    width: 90vh;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    padding: 0 5rem;
+    justify-content: flex-end;
+}
+
+h3{
+    text-decoration:underline;
+    text-decoration-color: #000;
+    text-decoration-style: solid;
+    text-decoration-thickness: 5px;
+}
+h3:hover{
+    color: #000;
+    transition: all .5s;
+    text-decoration-color: aliceblue;
+}
+.content span{
+    font-size: 8rem;
+    margin: 0 1.6rem;
+    font-weight: bolder;
+    text-shadow: 2px 1px 10px #000;
+}
+
+.ctnchild1{
+    color: red;
+    position: relative;
+    animation-name: wordMove;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1.5s;
+    animation-direction: alternate-reverse;
+    animation-fill-mode:forwards;
+    animation-iteration-count: infinite;
+}
+.ctnchild2{
+    position: relative;
+    animation-name: reverseWordMove;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1.5s;
+    animation-direction: alternate-reverse;
+    animation-fill-mode:forwards;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes wordMove{
+    from{
+        top: -5vh;
+    }
+    to{
+        top:5vh;
+    }
+}
+
+@keyframes reverseWordMove{
+    from{
+        top: 5vh;
+    }
+    to{
+        top: -5vh;
+    }
+}
